@@ -1,0 +1,397 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sermon Analyzer Config",
+  "type": "object",
+  "required": [
+    "church",
+    "series",
+    "processing",
+    "outputs"
+  ],
+  "properties": {
+    "church": {
+      "type": "object",
+      "required": [
+        "name",
+        "timezone",
+        "pastor",
+        "service"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "pastor": {
+          "type": "string"
+        },
+        "service": {
+          "type": "object",
+          "required": [
+            "day",
+            "startTime",
+            "endTime"
+          ],
+          "properties": {
+            "day": {
+              "type": "string"
+            },
+            "startTime": {
+              "type": "string"
+            },
+            "endTime": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "doctrine": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": [
+            "local_file",
+            "inline",
+            "url"
+          ]
+        },
+        "path": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "strictness": {
+          "type": "string",
+          "enum": [
+            "low",
+            "moderate",
+            "high"
+          ],
+          "default": "moderate"
+        }
+      }
+    },
+    "people": {
+      "type": "object",
+      "properties": {
+        "family": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/person"
+          }
+        },
+        "staff": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/person"
+          }
+        },
+        "pastor": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/person"
+          }
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/person"
+          }
+        },
+        "commentators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/person"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "properties": {
+        "priority": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "website",
+              "boxcast",
+              "youtube"
+            ]
+          }
+        },
+        "website": {
+          "type": "string"
+        },
+        "boxcast": {
+          "type": "string"
+        },
+        "youtube": {
+          "type": "string"
+        }
+      }
+    },
+    "series": {
+      "type": "object",
+      "required": [
+        "name",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "BOOK",
+            "PERSON",
+            "TOPICAL",
+            "NONE"
+          ]
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "SINGLE_SERMON",
+            "HISTORICAL_BATCH",
+            "ONGOING_SCHEDULED",
+            "HYBRID"
+          ]
+        },
+        "backfill": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "sermons": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "date",
+                  "title",
+                  "url"
+                ],
+                "properties": {
+                  "date": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "processing": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "SINGLE_SERMON",
+            "HISTORICAL_BATCH",
+            "ONGOING_SCHEDULED",
+            "HYBRID"
+          ]
+        },
+        "allowSingleSermon": {
+          "type": "boolean"
+        },
+        "skipNonSeries": {
+          "type": "boolean"
+        },
+        "detectScriptureReading": {
+          "type": "boolean"
+        },
+        "detectHumor": {
+          "type": "boolean"
+        },
+        "detectSarcasm": {
+          "type": "boolean"
+        },
+        "detectAnalogies": {
+          "type": "boolean"
+        },
+        "detectEvents": {
+          "type": "object",
+          "properties": {
+            "current": {
+              "type": "boolean"
+            },
+            "biblical": {
+              "type": "boolean"
+            },
+            "political": {
+              "type": "boolean"
+            },
+            "naturalDisaster": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "discovery": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "days",
+            "service_count",
+            "date_range"
+          ]
+        },
+        "value": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        }
+      }
+    },
+    "schedule": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "runDay": {
+          "type": "string"
+        },
+        "runTime": {
+          "type": "string"
+        },
+        "lookback": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "type": "string",
+              "enum": [
+                "days",
+                "service_count",
+                "date_range"
+              ]
+            },
+            "value": {
+              "type": [
+                "integer",
+                "string"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/outputConfig"
+      }
+    },
+    "versioning": {
+      "type": "object",
+      "properties": {
+        "trackPromptVersion": {
+          "type": "boolean"
+        },
+        "trackWorkflowVersion": {
+          "type": "boolean"
+        },
+        "trackDoctrineVersion": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "person": {
+      "type": "object",
+      "required": [
+        "name",
+        "role"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "FAMILY",
+            "STAFF",
+            "PASTOR",
+            "READER",
+            "AUTHOR",
+            "COMMENTATOR",
+            "BIBLICAL_PERSON",
+            "OTHER"
+          ]
+        }
+      }
+    },
+    "outputConfig": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "voice": {
+          "type": "string",
+          "enum": [
+            "LISTENER_THIRD_PERSON",
+            "EDITORIAL_THIRD_PERSON",
+            "PASTOR_FIRST_PERSON",
+            "DIRECT_TO_READER",
+            "FORMAL_NEUTRAL"
+          ]
+        },
+        "includeQuotes": {
+          "type": "boolean"
+        },
+        "expansionLevel": {
+          "type": "string",
+          "enum": [
+            "low",
+            "moderate",
+            "high"
+          ]
+        },
+        "citationStyle": {
+          "type": "string",
+          "enum": [
+            "none",
+            "inline",
+            "full"
+          ]
+        }
+      }
+    }
+  }
+}

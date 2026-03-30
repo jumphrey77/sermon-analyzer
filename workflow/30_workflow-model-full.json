@@ -1,0 +1,325 @@
+{
+  "workflowSet": "sermon_analyzer_mvp",
+  "version": "1.0.0",
+  "corePrinciples": {
+    "singleSharedProcessor": true,
+    "noDuplication": true,
+    "deterministic": true,
+    "fullRerunOnly": true
+  },
+  "workflows": [
+    {
+      "id": "config_intake",
+      "type": "orchestrator",
+      "trigger": {
+        "type": "webhook"
+      },
+      "steps": [
+        {
+          "id": "validate_config",
+          "type": "validation",
+          "schema": "config/app-config.schema.json"
+        },
+        {
+          "id": "normalize_config",
+          "type": "transform"
+        },
+        {
+          "id": "route_mode",
+          "type": "switch",
+          "field": "processing.mode",
+          "cases": {
+            "SINGLE_SERMON": "single_sermon",
+            "HISTORICAL_BATCH": "historical_backfill",
+            "ONGOING_SCHEDULED": "scheduled_processing",
+            "HYBRID": "hybrid_entry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hybrid_entry",
+      "type": "orchestrator",
+      "steps": [
+        {
+          "id": "run_backfill_first",
+          "type": "execute_workflow",
+          "workflow": "historical_backfill"
+        },
+        {
+          "id": "enable_scheduled",
+          "type": "execute_workflow",
+          "workflow": "scheduled_processing"
+        }
+      ]
+    },
+    {
+      "id": "historical_backfill",
+      "type": "orchestrator",
+      "trigger": {
+        "type": "manual_or_webhook"
+      },
+      "steps": [
+        {
+          "id": "load_config",
+          "type": "load_config"
+        },
+        {
+          "id": "load_backlog",
+          "type": "input",
+          "source": "series.backfill.sermons"
+        },
+        {
+          "id": "check_registry",
+          "type": "state_lookup",
+          "state": "sermon_registry"
+        },
+        {
+          "id": "filter_unprocessed",
+          "type": "filter",
+          "condition": "not_exists_in_registry"
+        },
+        {
+          "id": "loop_sermons",
+          "type": "split_in_batches"
+        },
+        {
+          "id": "process_sermon",
+          "type": "execute_workflow",
+          "workflow": "shared_sermon_processor"
+        },
+        {
+          "id": "update_registry",
+          "type": "state_update",
+          "state": "sermon_registry"
+        }
+      ]
+    },
+    {
+      "id": "scheduled_processing",
+      "type": "orchestrator",
+      "trigger": {
+        "type": "cron",
+        "schedule": "monday"
+      },
+      "steps": [
+        {
+          "id": "load_config",
+          "type": "load_config"
+        },
+        {
+          "id": "discover_sermons",
+          "type": "discovery",
+          "sources": [
+            "website",
+            "boxcast",
+            "youtube"
+          ]
+        },
+        {
+          "id": "apply_lookback",
+          "type": "filter",
+          "condition": "within_discovery_window"
+        },
+        {
+          "id": "normalize_metadata",
+          "type": "transform"
+        },
+        {
+          "id": "check_registry",
+          "type": "state_lookup",
+          "state": "sermon_registry"
+        },
+        {
+          "id": "filter_new",
+          "type": "filter",
+          "condition": "not_exists_in_registry"
+        },
+        {
+          "id": "process_sermon",
+          "type": "execute_workflow",
+          "workflow": "shared_sermon_processor"
+        },
+        {
+          "id": "update_registry",
+          "type": "state_update",
+          "state": "sermon_registry"
+        }
+      ]
+    },
+    {
+      "id": "single_sermon",
+      "type": "orchestrator",
+      "trigger": {
+        "type": "webhook_or_manual"
+      },
+      "steps": [
+        {
+          "id": "load_config",
+          "type": "load_config"
+        },
+        {
+          "id": "load_input",
+          "type": "input"
+        },
+        {
+          "id": "process_sermon",
+          "type": "execute_workflow",
+          "workflow": "shared_sermon_processor"
+        },
+        {
+          "id": "update_registry",
+          "type": "state_update",
+          "state": "sermon_registry"
+        }
+      ]
+    },
+    {
+      "id": "shared_sermon_processor",
+      "type": "core",
+      "stages": [
+        {
+          "id": "ingestion",
+          "steps": [
+            {
+              "id": "fetch_source",
+              "type": "http_request"
+            },
+            {
+              "id": "detect_source_type",
+              "type": "transform"
+            },
+            {
+              "id": "extract_media",
+              "type": "media_extraction"
+            },
+            {
+              "id": "capture_metadata",
+              "type": "transform"
+            }
+          ]
+        },
+        {
+          "id": "transcription",
+          "steps": [
+            {
+              "id": "run_transcription_model",
+              "type": "ai_transcription"
+            },
+            {
+              "id": "detect_boundaries",
+              "type": "ai_analysis"
+            },
+            {
+              "id": "mark_unintelligible",
+              "type": "transform"
+            }
+          ]
+        },
+        {
+          "id": "analysis",
+          "steps": [
+            {
+              "id": "classify_content",
+              "type": "ai_analysis",
+              "outputs": [
+                "SERVICE",
+                "SCRIPTURE_READING",
+                "SERMON",
+                "BENEDICTION"
+              ]
+            },
+            {
+              "id": "feature_tagging",
+              "type": "ai_analysis",
+              "tags": [
+                "HUMOR",
+                "SARCASM",
+                "ANALOGY",
+                "CURRENT_EVENT",
+                "BIBLICAL_EVENT",
+                "POLITICAL_EVENT",
+                "NATURAL_DISASTER"
+              ]
+            },
+            {
+              "id": "structure_detection",
+              "type": "ai_analysis"
+            },
+            {
+              "id": "reference_extraction",
+              "type": "ai_analysis"
+            },
+            {
+              "id": "viewpoint_classification",
+              "type": "ai_analysis",
+              "outputs": [
+                "endorsed",
+                "rejected",
+                "uncertain"
+              ]
+            },
+            {
+              "id": "doctrine_alignment",
+              "type": "ai_analysis"
+            }
+          ]
+        },
+        {
+          "id": "output_generation",
+          "steps": [
+            {
+              "id": "generate_outputs",
+              "type": "ai_generation",
+              "configDriven": true
+            }
+          ]
+        },
+        {
+          "id": "state_update",
+          "steps": [
+            {
+              "id": "update_versions",
+              "type": "state_update",
+              "fields": [
+                "initialWorkflowVersion",
+                "lastWorkflowVersion",
+                "initialPromptBundleVersion",
+                "lastPromptBundleVersion",
+                "currentOutputVersion"
+              ]
+            },
+            {
+              "id": "store_artifacts",
+              "type": "storage"
+            },
+            {
+              "id": "log_flags",
+              "type": "state_update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateModel": {
+    "registry": "sermon_registry",
+    "fields": [
+      "sermonId",
+      "title",
+      "date",
+      "sourceUrl",
+      "series",
+      "status",
+      "firstProcessed",
+      "lastProcessed",
+      "initialWorkflowVersion",
+      "lastWorkflowVersion",
+      "initialPromptBundleVersion",
+      "lastPromptBundleVersion",
+      "currentOutputVersion",
+      "artifacts",
+      "flags"
+    ]
+  }
+}
