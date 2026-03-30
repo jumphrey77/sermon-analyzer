@@ -1,0 +1,120 @@
+{
+  "contracts": {
+    "ingestionToTranscription": {
+      "input": {
+        "sermonId": "string",
+        "sourceUrl": "string",
+        "mediaType": "video|audio",
+        "metadata": {
+          "title": "string",
+          "date": "string",
+          "duration": "number"
+        }
+      },
+      "output": {
+        "mediaFilePath": "string",
+        "audioExtracted": "boolean"
+      }
+    },
+    "transcriptionToAnalysis": {
+      "input": {
+        "sermonId": "string",
+        "transcript": "string",
+        "timestamps": [
+          {
+            "time": "string",
+            "text": "string"
+          }
+        ],
+        "markers": {
+          "startTime": "string",
+          "endTime": "string",
+          "benedictionDetected": "boolean"
+        },
+        "flags": {
+          "unintelligibleSegments": [
+            {
+              "time": "string",
+              "note": "string"
+            }
+          ]
+        }
+      },
+      "output": {
+        "cleanTranscript": "string",
+        "structuredTranscript": "object"
+      }
+    },
+    "analysisToOutput": {
+      "input": {
+        "sermonId": "string",
+        "structure": {
+          "introduction": "string",
+          "mainPoints": [
+            {
+              "title": "string",
+              "subPoints": [
+                "string"
+              ]
+            }
+          ],
+          "conclusion": "string"
+        },
+        "references": {
+          "scripture": [
+            "string"
+          ],
+          "authors": [
+            "string"
+          ],
+          "external": [
+            "string"
+          ]
+        },
+        "features": {
+          "humor": true,
+          "sarcasm": true,
+          "analogies": [
+            "string"
+          ],
+          "events": [
+            {
+              "type": "current|biblical|political|natural",
+              "description": "string"
+            }
+          ]
+        },
+        "doctrine": {
+          "aligned": true,
+          "conflicts": []
+        }
+      },
+      "output": {
+        "outputsGenerated": [
+          {
+            "type": "string",
+            "path": "string"
+          }
+        ]
+      }
+    },
+    "outputToRegistry": {
+      "input": {
+        "sermonId": "string",
+        "artifacts": [
+          {
+            "type": "string",
+            "version": "string",
+            "path": "string",
+            "generatedAt": "string"
+          }
+        ],
+        "workflowVersion": "string",
+        "promptBundleVersion": "string"
+      },
+      "output": {
+        "registryUpdated": true
+      }
+    }
+  }
+}

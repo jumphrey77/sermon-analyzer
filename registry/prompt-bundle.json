@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "description": "Master prompt bundle for sermon analyzer",
+  "prompts": {
+    "transcription": {
+      "file": "prompts/6.0_transcription-prompt.md",
+      "version": "6.0"
+    },
+    "analysis": {
+      "file": "prompts/7.0_analysis-prompt.md",
+      "version": "7.0"
+    }
+  },
+  "globalConfig": {
+    "bibleVersion": "ESV",
+    "defaultVoice": "third_person",
+    "detect": {
+      "humor": true,
+      "sarcasm": true,
+      "analogy": true,
+      "currentEvents": true,
+      "politicalEvents": true,
+      "naturalDisasters": true
+    },
+    "entityRecognition": {
+      "people": true,
+      "staff": true,
+      "authors": true,
+      "family": true
+    }
+  }
+}

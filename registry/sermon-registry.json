@@ -1,3 +1,45 @@
 {
-  "sermons": []
+  "sermons": [
+    {
+      "sermonId": "2026-03-08-matthew-1-1-17",
+      "title": "The Genealogy of Christ",
+      "series": "The Gospel of Matthew",
+      "date": "2026-03-08",
+      "source": {
+        "type": "website",
+        "url": "https://example.com/sermon-url"
+      },
+      "status": {
+        "processed": true,
+        "skipped": false,
+        "skipReason": null
+      },
+      "versions": {
+        "initialWorkflowVersion": "1.0.0",
+        "initialPromptBundleVersion": "1.0.0",
+        "lastRunWorkflowVersion": "1.0.0",
+        "lastRunPromptBundleVersion": "1.0.0"
+      },
+      "artifacts": [
+        {
+          "type": "transcript",
+          "version": "v1",
+          "path": "output/2026-03-08/transcript/transcript_v1.md",
+          "generatedAt": "2026-03-08T12:00:00Z"
+        },
+        {
+          "type": "churchNotes",
+          "version": "v1",
+          "path": "output/2026-03-08/church-notes/church-notes_v1.md",
+          "generatedAt": "2026-03-08T12:05:00Z"
+        }
+      ],
+      "flags": {
+        "unintelligible": false,
+        "lowConfidence": false,
+        "doctrineConflict": false,
+        "notes": []
+      }
+    }
+  ]
 }
