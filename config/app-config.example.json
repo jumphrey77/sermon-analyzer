@@ -1,0 +1,18 @@
+{
+  "church": {
+    "name": "Example",
+    "timezone": "America/New_York"
+  },
+  "series": {
+    "name": "The Gospel of Matthew",
+    "type": "BOOK"
+  },
+  "processing": {
+    "mode": "HYBRID"
+  },
+  "outputs": {
+    "transcript": {
+      "enabled": true
+    }
+  }
+}

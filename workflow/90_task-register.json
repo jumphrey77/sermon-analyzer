@@ -1,0 +1,19 @@
+{
+  "changes": [
+    {
+      "id": 1,
+      "desc": "Adopt full rerun strategy",
+      "impact": "workflow"
+    },
+    {
+      "id": 2,
+      "desc": "Add feature tagging (sarcasm, analogy, events)",
+      "impact": "analysis"
+    },
+    {
+      "id": 3,
+      "desc": "Introduce version tracking",
+      "impact": "state"
+    }
+  ]
+}

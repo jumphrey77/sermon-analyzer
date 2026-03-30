@@ -1,0 +1,5 @@
+Use patch mode. Plain text only. No canvas.
+
+Repo is loaded.
+Repo URL is https://github.com/jumphrey77/sermon-analyzer
+Continue Sermon Analyzer — start with n8n node-level design for Shared Sermon Processor.

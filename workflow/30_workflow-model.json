@@ -1,0 +1,26 @@
+{
+  "workflows": [
+    {
+      "id": "config_intake"
+    },
+    {
+      "id": "historical_backfill"
+    },
+    {
+      "id": "scheduled_processing"
+    },
+    {
+      "id": "single_sermon"
+    },
+    {
+      "id": "shared_processor",
+      "stages": [
+        "ingestion",
+        "transcription",
+        "analysis",
+        "output_generation",
+        "state_update"
+      ]
+    }
+  ]
+}
