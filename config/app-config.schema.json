@@ -2,21 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Sermon Analyzer Config",
   "type": "object",
-  "required": [
-    "church",
-    "series",
-    "processing",
-    "outputs"
-  ],
+  "required": ["church", "series", "processing", "outputs"],
   "properties": {
     "church": {
       "type": "object",
-      "required": [
-        "name",
-        "timezone",
-        "pastor",
-        "service"
-      ],
+      "required": ["name", "timezone", "pastor", "service"],
       "properties": {
         "name": {
           "type": "string"
@@ -29,11 +19,7 @@
         },
         "service": {
           "type": "object",
-          "required": [
-            "day",
-            "startTime",
-            "endTime"
-          ],
+          "required": ["day", "startTime", "endTime"],
           "properties": {
             "day": {
               "type": "string"
@@ -53,11 +39,7 @@
       "properties": {
         "source": {
           "type": "string",
-          "enum": [
-            "local_file",
-            "inline",
-            "url"
-          ]
+          "enum": ["local_file", "inline", "url"]
         },
         "path": {
           "type": "string"
@@ -67,11 +49,7 @@
         },
         "strictness": {
           "type": "string",
-          "enum": [
-            "low",
-            "moderate",
-            "high"
-          ],
+          "enum": ["low", "moderate", "high"],
           "default": "moderate"
         }
       }
@@ -118,11 +96,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "website",
-              "boxcast",
-              "youtube"
-            ]
+            "enum": ["website", "boxcast", "youtube"]
           }
         },
         "website": {
@@ -138,31 +112,20 @@
     },
     "series": {
       "type": "object",
-      "required": [
-        "name",
-        "type"
-      ],
+      "required": ["name", "type"],
       "properties": {
         "name": {
           "type": "string"
         },
         "type": {
           "type": "string",
-          "enum": [
-            "BOOK",
-            "PERSON",
-            "TOPICAL",
-            "NONE"
-          ]
+          "enum": ["BOOK", "PERSON", "TOPICAL", "NONE"]
         },
         "startDate": {
           "type": "string"
         },
         "endDate": {
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": ["string", "null"]
         },
         "mode": {
           "type": "string",
@@ -183,11 +146,7 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "required": [
-                  "date",
-                  "title",
-                  "url"
-                ],
+                "required": ["date", "title", "url"],
                 "properties": {
                   "date": {
                     "type": "string"
@@ -207,9 +166,7 @@
     },
     "processing": {
       "type": "object",
-      "required": [
-        "mode"
-      ],
+      "required": ["mode"],
       "properties": {
         "mode": {
           "type": "string",
@@ -262,17 +219,10 @@
       "properties": {
         "mode": {
           "type": "string",
-          "enum": [
-            "days",
-            "service_count",
-            "date_range"
-          ]
+          "enum": ["days", "service_count", "date_range"]
         },
         "value": {
-          "type": [
-            "integer",
-            "string"
-          ]
+          "type": ["integer", "string"]
         }
       }
     },
@@ -293,17 +243,10 @@
           "properties": {
             "mode": {
               "type": "string",
-              "enum": [
-                "days",
-                "service_count",
-                "date_range"
-              ]
+              "enum": ["days", "service_count", "date_range"]
             },
             "value": {
-              "type": [
-                "integer",
-                "string"
-              ]
+              "type": ["integer", "string"]
             }
           }
         }
@@ -333,10 +276,7 @@
   "definitions": {
     "person": {
       "type": "object",
-      "required": [
-        "name",
-        "role"
-      ],
+      "required": ["name", "role"],
       "properties": {
         "name": {
           "type": "string"
@@ -377,19 +317,11 @@
         },
         "expansionLevel": {
           "type": "string",
-          "enum": [
-            "low",
-            "moderate",
-            "high"
-          ]
+          "enum": ["low", "moderate", "high"]
         },
         "citationStyle": {
           "type": "string",
-          "enum": [
-            "none",
-            "inline",
-            "full"
-          ]
+          "enum": ["none", "inline", "full"]
         }
       }
     }

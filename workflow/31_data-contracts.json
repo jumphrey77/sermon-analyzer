@@ -53,30 +53,20 @@
           "mainPoints": [
             {
               "title": "string",
-              "subPoints": [
-                "string"
-              ]
+              "subPoints": ["string"]
             }
           ],
           "conclusion": "string"
         },
         "references": {
-          "scripture": [
-            "string"
-          ],
-          "authors": [
-            "string"
-          ],
-          "external": [
-            "string"
-          ]
+          "scripture": ["string"],
+          "authors": ["string"],
+          "external": ["string"]
         },
         "features": {
           "humor": true,
           "sarcasm": true,
-          "analogies": [
-            "string"
-          ],
+          "analogies": ["string"],
           "events": [
             {
               "type": "current|biblical|political|natural",

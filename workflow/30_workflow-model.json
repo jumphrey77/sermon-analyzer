@@ -25,11 +25,7 @@
         "id": "mode_router",
         "type": "switch",
         "description": "Route execution mode",
-        "routes": [
-          "single",
-          "backfill",
-          "discovery"
-        ]
+        "routes": ["single", "backfill", "discovery"]
       },
       {
         "id": "backfill_loader",
