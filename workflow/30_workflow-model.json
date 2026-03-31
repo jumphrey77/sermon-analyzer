@@ -18,18 +18,21 @@
       {
         "id": "config_load",
         "type": "function",
+        "version": "1.0",
         "description": "Load JSON config input",
         "output": "config"
       },
       {
         "id": "mode_router",
         "type": "switch",
+        "version": "1.0",
         "description": "Route execution mode",
         "routes": ["single", "backfill", "discovery"]
       },
       {
         "id": "backfill_loader",
         "type": "function",
+        "version": "1.0",
         "description": "Load explicit sermon list",
         "condition": "mode == backfill",
         "output": "sermonList"
@@ -37,6 +40,7 @@
       {
         "id": "discovery_engine",
         "type": "function",
+        "version": "1.0",
         "description": "Discover new sermons from sources",
         "condition": "mode == discovery",
         "output": "sermonList"
@@ -44,18 +48,21 @@
       {
         "id": "dedupe_registry_check",
         "type": "function",
+        "version": "1.0",
         "description": "Check registry for processed sermons",
         "output": "filteredSermonList"
       },
       {
         "id": "loop_sermons",
         "type": "loop",
+        "version": "1.0",
         "description": "Process each sermon individually",
         "items": "filteredSermonList"
       },
       {
         "id": "ingestion",
         "type": "function",
+        "version": "1.0",
         "description": "Download or access media",
         "output": "media"
       },
@@ -63,12 +70,14 @@
         "id": "transcription",
         "type": "ai",
         "provider": "openai|whisper|other",
+        "version": "1.0",
         "description": "Generate transcript",
         "output": "transcript"
       },
       {
         "id": "transcript_processing",
         "type": "function",
+        "version": "1.0",
         "description": "Detect structure and markers",
         "output": "structuredTranscript"
       },
@@ -76,36 +85,42 @@
         "id": "analysis",
         "type": "ai",
         "provider": "openai|claude",
+        "version": "1.0",
         "description": "Analyze sermon structure and content",
         "output": "analysis"
       },
       {
         "id": "doctrine_check",
         "type": "function",
+        "version": "1.0",
         "description": "Compare analysis to doctrine config",
         "output": "doctrineResult"
       },
       {
         "id": "output_generation",
         "type": "ai",
+        "version": "1.0",
         "description": "Generate configured outputs",
         "output": "artifacts"
       },
       {
         "id": "artifact_storage",
         "type": "function",
+        "version": "1.0",
         "description": "Save outputs to filesystem",
         "output": "storedArtifacts"
       },
       {
         "id": "registry_update",
         "type": "function",
+        "version": "1.0",
         "description": "Update sermon registry",
         "output": "registryStatus"
       },
       {
         "id": "logging",
         "type": "function",
+        "version": "1.0",
         "description": "Generate improvement log",
         "output": "log"
       }

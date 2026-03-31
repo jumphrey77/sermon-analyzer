@@ -42,6 +42,7 @@
       },
       "output": {
         "cleanTranscript": "string",
+        "confidence": "number",
         "structuredTranscript": "object"
       }
     },
