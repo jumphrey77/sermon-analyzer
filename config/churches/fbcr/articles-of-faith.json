@@ -1,0 +1,233 @@
+{
+  "document": "Article 5 – The Articles of Faith",
+  "articles": [
+    {
+      "title": "The Scriptures",
+      "description": "We believe in the authority and sufficiency of the Holy Bible, consisting of the sixty-six canonical books of the Old and New Testaments, as originally written. These verbally (the very words) and plenarily (complete in every respect) inspired texts are the product of Spirit-controlled men, and therefore are infallible and inerrant, in detail and theological content. We believe the Bible to be the authority and standard by which all human conduct, creeds and opinions shall be tried.",
+      "scripture_references": ["2 Timothy 3:16-17", "2 Peter 1:19-21"]
+    },
+    {
+      "title": "The Triune God",
+      "description": "We believe there is one and only one living and true God, Who is an infinite Spirit, the Maker and supreme Ruler of heaven and earth; inexpressibly glorious in holiness, and worthy of all possible honor, confidence and love; that in the unity of the Godhead there are three persons, the unbegotten Father, His only begotten Son, and the Holy Spirit who proceeds from both the Father and the Son, equal in every divine perfection and executing distinct but harmonious offices in the great work of redemption.",
+      "scripture_references": [
+        "Deuteronomy 6:4",
+        "John 4:24",
+        "1 Corinthians 8:6",
+        "John 15:26-27",
+        "Acts 2:14-47"
+      ]
+    },
+    {
+      "title": "God the Father",
+      "description": "We believe in the person of God the Father who sends both God the Son and God the Holy Spirit in redemptive history. We believe that the Father has provided a great salvation for those who repent of their sins and trust Christ and His finished work through the Holy Spirit; that He calls, justifies, forgives, adopts, sanctifies, keeps and will glorify them.",
+      "scripture_references": ["John 14:26", "Romans 8:28-39", "John 4:24"]
+    },
+    {
+      "title": "New Creation in Christ",
+      "description": "We believe that in order to be saved, sinners must be born again; that the new birth is a new creation in Christ Jesus; that it is instantaneous and not a process; that in the new birth, the one dead in trespasses and in sins is made partaker of the divine nature, is adopted as a child and heir of God, and receives eternal life, the free gift of God; that the new creation is brought about by our sovereign God in a manner above our comprehension, solely by the power of the Holy Spirit in connection with divine truth, so as to secure our voluntary obedience to the gospel; that its proper evidence appears in the holy fruits of repentance and faith and newness of life.",
+      "scripture_references": [
+        "John 3:3-8",
+        "2 Corinthians 5:17",
+        "1 John 5:1-5",
+        "Acts 16:30-33",
+        "2 Peter 1:4",
+        "Romans 6:23",
+        "Romans 8:15-17",
+        "Ephesians 2:1, 5",
+        "2 Corinthians 5:19",
+        "Colossians 2:13"
+      ]
+    },
+    {
+      "title": "Justification",
+      "description": "We believe that justification is that judicial act of God whereby He declares the believer righteous upon the basis of the sinner's guilt being imputed to Christ and the righteousness of Christ being imputed to the sinner; that it is bestowed, not in consideration of any work of righteousness which we have done, but solely through faith in the Redeemer's death and resurrection.",
+      "scripture_references": [
+        "Romans 3:24",
+        "Romans 4:5, 25",
+        "Romans 5:1, 9",
+        "1 Corinthians 5:21",
+        "Galatians 2:16",
+        "Philippians 3:9"
+      ]
+    },
+    {
+      "title": "Sanctification",
+      "description": "We believe that sanctification is the divine setting apart of the believer unto God accomplished in a threefold manner; (1) an eternal act of God based upon redemption in Christ establishing the believer in a position of holiness at the moment he trusts the Savior; (2) a progressive change in his walk as day by day he grows in grace toward the likeness of Christ by the power of the Holy Spirit in the continual use of the appointed means, especially the Word of God, self-examination, watchfulness, prayer and yielding to the Spirit through Biblical change; (3) the final accomplishment of this process will be realized at the Lord's return.",
+      "scripture_references": [
+        "Hebrews 10:10-14",
+        "John 17:17",
+        "Romans 8:13, 28-29a",
+        "Romans 12:1-2",
+        "2 Corinthians 3:18",
+        "1 Corinthians 1:30",
+        "2 Corinthians 7:1",
+        "Ephesians 4:11-16",
+        "1 Thessalonians 4:3-4",
+        "1 Thessalonians 5:23-24",
+        "2 Peter 3:18",
+        "1 John 3:1-3",
+        "Jude 24, 25",
+        "Revelation 22:11"
+      ]
+    },
+    {
+      "title": "The Security of the Saints",
+      "description": "We believe the design of God's divine plan in that every person, immediately upon acceptance of Christ as personal Savior and Lord, receives eternal life and is made at once a Son of God; that believers are kept by the power of God through faith, are kept in a state of grace, and are eternally secure apart from any human works; that such only are believers who endure to the end, and that the believers' persevering attachment to Christ and His own and their growth in the likeness of Christ are God's marks which distinguish them from superficial professors.",
+      "scripture_references": [
+        "1 John 5:11-13",
+        "John 1:12",
+        "Philippians 1:6",
+        "John 8:31",
+        "Revelation 21:7-8",
+        "Ephesians 2:10",
+        "Romans 8:28-29a",
+        "John 14:21-23",
+        "John 10:27-29",
+        "1 John 2:19",
+        "1 John 5:1-3",
+        "John 13:34-35",
+        "Ephesians 2:10",
+        "Titus 2:11-13",
+        "James 2:14-20"
+      ]
+    },
+    {
+      "title": "The Righteous and the Wicked",
+      "description": "We believe that there is a radical and essential difference between the righteous and the wicked; that such only as through faith are justified in the name of the Lord Jesus Christ, and sanctified by the Spirit of God's righteousness, are therefore righteous in His esteem; while all who continue in unrepentance and unbelief are wicked in His sight, remaining under sin's curse; this distinction holds among men both in this life and after death, continuing in the everlasting joy of the saved and the everlasting conscious suffering of the lost.",
+      "scripture_references": [
+        "Genesis 18:23",
+        "Proverbs 14:32",
+        "Malachi 3:18",
+        "Matthew 25:31-41",
+        "Luke 16:19-26",
+        "Romans 6:14-23",
+        "1 John 5:19"
+      ]
+    },
+    {
+      "title": "The Local Church",
+      "description": "We believe that a local new testament church is an organized body or assembly of baptized believers, associated by covenant of faith and fellowship of the gospel; sovereign in polity and banded together to fulfill God's purpose for the Church. \"FBCR exists to Glorify God by Worshiping the Living God, Growing as Disciples of Christ, Proclaiming the Gospel to all, and Serving One Another in Love.\" – FBCR Purpose Statement. We believe that it is the responsibility of the local church to celebrate the ordinances of Christ publicly as a church body; to be governed by His laws; and to exercise the gifts, duties and privileges vested in them by His word; that its spiritual officers, pastors and deacons, are men whose qualifications, claims and duties are clearly defined in the Scriptures. We hold that the local church has the absolute right of self-government free from the interference of any hierarchy of individuals or organizations; and that the one and only head is Christ through the Holy Spirit; that it is scriptural for true churches to cooperate with each other in contending for the faith and for the furtherance of the Gospel; that each local church is the sole judge of the measure and method of its cooperation. On all matters of membership, of polity, of government, of discipline, and of benevolence, the will of the local church, following the Word of God, is final.",
+      "scripture_references": [
+        "Matthew 18:15-17",
+        "Matthew 28:18-20",
+        "Acts 2:41-42",
+        "Acts 15:13-18",
+        "1 Corinthians 12:28",
+        "Ephesians 1:22-23",
+        "Ephesians 3:8-10",
+        "Ephesians 4:11-16",
+        "Ephesians 5:23-24",
+        "Colossians 1:18",
+        "1 Timothy 3:1-13",
+        "Titus 1:5-15"
+      ]
+    },
+    {
+      "title": "Baptism and the Lord's Supper",
+      "description": "We believe that Jesus gave two ordinances to the church, baptism of believers and the Lord's Supper. Christian baptism is the immersion of a believer in water, in the name of the Father, the Son, and the Holy Spirit, to show forth in a solemn testimony and picture of our faith in the crucified, buried, and risen Savior, with its effect in our death to sin and resurrection to a new life. Believer's baptism is a prerequisite to the privileges of church membership. We believe that the Lord's Supper is a symbolic ordinance, picturing Christ's body given for our sins and His blood shed for our redemption. The Lord's Supper is not a saving ordinance, but helps us to remember Jesus' death as we look forward to His coming again. This ordinance is to be observed by regenerate, obedient believers.",
+      "scripture_references": {
+        "Baptism": [
+          "Matthew 3:16",
+          "Acts 2:41, 42",
+          "Acts 8:12, 26-39",
+          "Romans 6:3, 5",
+          "Colossians 2:12"
+        ],
+        "The Lord's Supper": [
+          "Matthew 26:26-30",
+          "Mark 14:22-26",
+          "Luke 22:19-20",
+          "1 Corinthians 11:23-28"
+        ]
+      }
+    },
+    {
+      "title": "Personal Separation",
+      "description": "We believe that the lifestyle of the believer shall be characterized by a walk that exemplifies their faith in Jesus Christ and sets them apart from the world. The believer should live so as to please God and not be conformed to the standards of the world, but be transformed by the renewing of their mind. The child of God shall be separate from that which violates the direct commands or principles of the Scriptures and shall be completely obedient to the Word of God. This lifestyle shall exhibit soberness, righteousness and godliness in this present world. However, we are not to disengage from relationships with those who do not have faith. Rather, we are to be lights to the world and interact with non-believers for the Gospel's sake.",
+      "scripture_references": [
+        "Romans 12:1-2",
+        "2 Corinthians 6:14-18",
+        "1 Thessalonians 4:1-8",
+        "Titus 2:12",
+        "1 Peter 1:13-16",
+        "1 John 2:15-17",
+        "1 Corinthians 5:9-13",
+        "John 17:15-17",
+        "Matthew 5:13-16"
+      ]
+    },
+    {
+      "title": "Future Events",
+      "description": "We believe in the personal, visible, premillennial second coming of the Lord Jesus Christ as the King of kings and Lord of lords. We believe that we are now living in the church age or the age of grace and the end times will begin with the rapture of the church and will culminate with the final judgment of the righteous and the wicked. As these future events unfold, we believe that Scripture teaches there will be a 7-year tribulation period on the earth which will follow the rapture of the church. After the tribulation, Jesus Christ will return to earth, and set up His kingdom for a 1000-year rule, which is called the Millennial reign of Christ. Following the Millennial reign, a great judgment will take place known as the Great White Throne Judgment. Books will be opened and those not found written in the Lamb's Book of Life will be cast into the Lake of Fire. Those who are written in the Lamb's Book of Life will be ushered into the new heaven and new earth.",
+      "scripture_references": [
+        "Isaiah 65:17",
+        "John 14:1-4",
+        "Matthew 13:24-30, 36-43",
+        "Matthew 16:27",
+        "Matthew 24:1-51",
+        "Matthew 22:13",
+        "Matthew 24:51",
+        "Matthew 25:30",
+        "1 Thessalonians 4:13-18",
+        "Revelation 19:11-16",
+        "Revelation 20:11-15",
+        "Revelation 21:1"
+      ]
+    },
+    {
+      "title": "Marriage & Family",
+      "description": "God has ordained the family as the foundational institution of human society. It is composed of persons related to one another by marriage, blood, or adoption. Marriage is the uniting of one man and one woman in covenant commitment for a lifetime. It is God's unique gift to reveal the union between Christ and His church and to provide for the man and the woman in marriage the framework for intimate companionship, the channel of sexual expression according to biblical standards, and the means for procreation and care of the human race. The husband and wife are of equal worth before God, since both are created in God's image. The marriage relationship models the way God relates to His people. A husband is to love his wife as Christ loved the church. He has the God-given responsibility to provide for, to protect, and to lead his family. A wife is to submit herself graciously to her husband, the servant leader of the home, even as the church willingly submits to the headship of Christ. She has the God-given responsibility to respect her husband and be his partner/helper in managing the household and nurturing the next generation. From the moment of conception, children are a blessing and heritage from the Lord. Parents are to demonstrate to their children God's pattern for marriage. Parents are to teach their children godly and moral values and to lead them, through consistent lifestyle example and loving discipline, to make choices based on biblical truth. Children are to honor and obey their parents.",
+      "scripture_references": [
+        "Genesis 1:26-28",
+        "Genesis 2:15-25",
+        "Genesis 3:1-20",
+        "Exodus 20:12",
+        "Deuteronomy 6:4-9",
+        "Joshua 24:15",
+        "1 Samuel 1:26-28",
+        "Psalms 51:5; 78:1-8; 127; 128; 139:13-16",
+        "Proverbs 1:8; 5:15-20; 6:20-22; 12:4; 13:24; 14:1; 17:6; 18:22; 22:6, 15; 23:13-14; 24:3; 29:15, 17; 31:10-31",
+        "Ecclesiastes 4:9-12; 9:9",
+        "Malachi 2:14-16",
+        "Matthew 5:31-32; 18:2-5; 19:3-9",
+        "Mark 10:6-12",
+        "Romans 1:18-32",
+        "1 Corinthians 7:1-16",
+        "Ephesians 5:21-33; 6:1-4",
+        "Colossians 3:18-21",
+        "1 Timothy 5:8, 14",
+        "2 Timothy 1:3-5",
+        "Titus 2:3-5",
+        "Hebrews 13:4",
+        "1 Peter 3:1-7"
+      ]
+    },
+    {
+      "title": "Human Sexuality",
+      "description": "We believe that God has given the gift of sexual intimacy to marriage. This gift is His means to propagate the human race as well as give pleasure to husband and wife in marriage. God has commanded that no intimate sexual activity be engaged in outside of marriage between a man and a woman. We believe that the Bible states that any form of perversion(s) of God's gift of sex such as homosexuality, lesbianism, bisexuality, fornication, adultery, and pornography, are sinful. We believe that God disapproves of and forbids any attempt to alter one's gender whether by surgery or appearance. NOTE: As with other temptations and sin(s), we affirm that both heterosexual and homosexual persons should find help in the church to engage in the Biblical battle against all improper sexual thoughts and behaviors.",
+      "scripture_references": [
+        "Genesis 2:24",
+        "Genesis 19:5, 13",
+        "Genesis 26:6-11",
+        "Leviticus 18:1-30",
+        "Romans 1:26-29",
+        "1 Corinthians 5:1",
+        "1 Corinthians 6:9",
+        "1 Thessalonians 4:1-8",
+        "Hebrews 13:4"
+      ]
+    },
+    {
+      "title": "Civil Government",
+      "description": "We believe that civil government is of divine appointment and that we are responsible to be good citizens. However, should government command us to violate God's Word, we must obey God rather than man.",
+      "scripture_references": [
+        "Daniel 3:17-18",
+        "Romans 13:1-7",
+        "Acts 4:18-20",
+        "1 Timothy 2:1-3",
+        "Titus 3:1",
+        "1 Peter 2:13-17"
+      ]
+    }
+  ]
+}

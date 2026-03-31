@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactType": "CHURCH_PROFILE",
+  "church": {
+    "churchId": "fbcr",
+    "churchName": "First Baptist Church of Rochester",
+    "preferredName": "FBCR",
+    "purposeStatement": "FBCR exists to Glorify God by Worshiping the Living God, Growing as Disciples of Christ, Proclaiming the Gospel to all, and Serving One Another in Love."
+  },
+  "doctrineProfile": {
+    "sourceDocumentName": "Article 5 – The Articles of Faith",
+    "sourceDocumentPath": "source/churches/fbcr/articles-of-faith.json"
+  },
+  "people": {
+    "pastors": [],
+    "staff": [],
+    "family": ["Marsha"],
+    "authors": []
+  },
+  "sources": {
+    "website": ["https://www.fbcrochester.org/resources/sermons/"],
+    "youtube": ["https://www.youtube.com/@FBCRochesterMedia/streams"],
+    "boxcast": []
+  },
+  "analysisHints": {
+    "highSensitivityDoctrineTopics": [
+      "security_of_the_saints",
+      "future_events",
+      "marriage_and_family",
+      "human_sexuality"
+    ],
+    "useDoctrineReferenceAnalysis": true,
+    "useDoctrineAlignmentAnalysis": true
+  }
+}
